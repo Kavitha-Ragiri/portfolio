@@ -5,6 +5,24 @@ function ProjectDetails() {
   const { projectName } = useParams();
   const navigate = useNavigate();
 
+  function projectLinks(){
+    
+    if(projectName === "ecommerce"){
+     return window.open("https://e-commerce-website-dusky-zeta.vercel.app/","_blank")
+    }
+     if(projectName === "todo"){
+     return window.open("https://github.com/Kavitha-Ragiri/Todo-List","_blank")
+    }
+    if(projectName === "studentRecords"){
+     return window.open("https://github.com/Kavitha-Ragiri/Students_Records","_blank")
+    }
+     if(projectName === "expenseTrackerSystem"){
+     return window.open("https://github.com/Kavitha-Ragiri/Expense_manager","_blank")
+    }
+
+  }
+    
+
   return (
     <div className="project-details-container">
       <h1> {projectName}</h1>
@@ -67,7 +85,8 @@ function ProjectDetails() {
 
 
       <button className="back-btn" onClick={() => navigate("/")}>Back To Home</button>
-      <button className="back-btn" onClick={() => navigate("https://github.com/Kavitha-Ragiri")}>Run Code</button>
+      <button className="back-btn" onClick={() => projectLinks("www.google.com")}>
+        Go To Live</button>
     </div>
   );
 }
